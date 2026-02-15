@@ -1,0 +1,220 @@
+.side-panel {
+    position: fixed;
+    top: 32px;
+    /* Below titlebar */
+    right: -400px;
+    width: 350px;
+    bottom: 0;
+    background-color: var(--bg-sidebar);
+    border-left: 1px solid var(--bg-titlebar);
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+    transition: right 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-panel.open {
+    right: 0;
+}
+
+.side-panel-header {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 16px;
+    border-bottom: 1px solid var(--bg-titlebar);
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    display: flex;
+}
+
+.close-btn:hover {
+    color: var(--text-primary);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.side-panel-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px;
+}
+
+.sp-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.sp-icon-container {
+    width: 96px;
+    height: 96px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    background-color: var(--bg-tertiary);
+}
+
+.sp-icon-container .app-icon,
+.sp-icon-container .app-icon-fallback {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.sp-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-header);
+    margin-bottom: 8px;
+}
+
+.sp-meta {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.sp-version {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.sp-badge {
+    font-size: 12px;
+    background-color: var(--bg-tertiary);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: var(--text-primary);
+}
+
+.sp-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 32px;
+}
+
+.btn-action {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+}
+
+.btn-install {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.btn-install:hover {
+    background-color: #1b8a47;
+}
+
+.btn-uninstall {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.btn-uninstall:hover {
+    background-color: #a12c2f;
+}
+
+.btn-secondary {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+    background-color: #404249;
+}
+
+.sp-description,
+.sp-details {
+    margin-bottom: 24px;
+}
+
+.sp-description h3,
+.sp-details h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-header);
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--bg-tertiary);
+    padding-bottom: 4px;
+}
+
+.sp-description p {
+    font-size: 14px;
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-row .label {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.detail-row .value {
+    font-size: 13px;
+    color: var(--text-primary);
+    text-align: right;
+    max-width: 60%;
+    word-break: break-all;
+}
+
+.value.link {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.value.link:hover {
+    text-decoration: underline;
+}
+
+.packager-value {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.packager-email-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    transition: color 0.2s;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.packager-email-icon:hover {
+    color: var(--accent-color);
+    background-color: rgba(255, 255, 255, 0.1);
+}

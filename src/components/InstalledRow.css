@@ -1,0 +1,84 @@
+/* Discord List Item Style */
+.installed-row {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    /* Compact padding */
+    border-radius: 4px;
+    /* Slight radius on hover items */
+    margin: 2px 8px;
+    /* Margin for hover effect separation */
+    background-color: transparent;
+    transition: background-color var(--transition-fast);
+    cursor: default;
+}
+
+.installed-row:hover {
+    background-color: rgba(79, 84, 92, 0.16);
+    /* Subtle hover */
+}
+
+/* Remove border-bottom from old design */
+
+.row-icon-container {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+    background-color: var(--bg-tertiary);
+}
+
+.row-icon-container .app-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.row-icon-container .app-icon-fallback {
+    color: var(--text-muted);
+}
+
+.row-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    /* Text truncation fix */
+}
+
+.row-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-header);
+}
+
+.row-meta {
+    font-size: 12px;
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn-uninstall {
+    background-color: transparent;
+    color: var(--text-muted);
+    padding: 6px 12px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid transparent;
+    transition: all var(--transition-fast);
+}
+
+.btn-uninstall:hover {
+    background-color: var(--danger-color);
+    color: white;
+    box-shadow: var(--shadow-sm);
+}

@@ -1,0 +1,240 @@
+/* Discord User Profile / App Card Style */
+.package-card {
+    background-color: #2b2d31;
+    /* Card bg */
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    /* Prepare for hover border */
+}
+
+.package-card:hover {
+    background-color: #35373c;
+    /* Slightly lighter */
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.app-icon-container {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    /* Rounded rect for apps */
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-tertiary);
+    /* Fallback bg */
+}
+
+.app-icon {
+    width: 65%;
+    height: 65%;
+    object-fit: contain;
+    display: block;
+    /* Remove inline spacing */
+}
+
+.app-icon-fallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    overflow: hidden;
+    /* Ensure SVG doesn't overflow */
+}
+
+.card-meta {
+    /* Auto height so it doesn't shrink */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 8px;
+    /* Spacing between meta and description */
+}
+
+.pkg-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-header);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 4px;
+}
+
+.badges {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.pkg-repo-badge {
+    font-size: 10px;
+    text-transform: uppercase;
+    background-color: #1e1f22;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: var(--text-muted);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.pkg-version {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.pkg-description {
+    font-size: 14px;
+    color: var(--text-primary);
+    /* More readable description */
+    line-height: 1.4;
+    margin-bottom: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    /* Remove flex: 1 to prevent it from growing and squishing content above if not needed, 
+       but if we want it to push buttons down, we can use margin-top: auto on buttons instead */
+    flex: 1;
+    /* Keep flex 1 to fill space, but ensure meta doesn't shrink */
+    /* min-height: 0; */
+    /* Allow shrinking if needed? No, text requires space. */
+}
+
+.card-actions {
+    margin-top: auto;
+}
+
+/* Discord Button Style */
+.btn-install {
+    width: 100%;
+    background-color: var(--success-color);
+    /* Green 'Success' button */
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 3px;
+    /* Smaller radius */
+    transition: background-color var(--transition-fast), transform 0.1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    border: none;
+}
+
+.btn-install:hover:not(:disabled) {
+    background-color: #1b8a47;
+    /* Darker green hover */
+    transform: translateY(-1px);
+}
+
+.btn-install:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+/* Status Pill */
+.status-pill {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: rgba(36, 128, 70, 0.2);
+    color: #4ade80;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(74, 222, 128, 0.2);
+}
+
+/* Manage Button */
+.btn-manage {
+    background-color: var(--bg-tertiary) !important;
+    color: var(--text-primary) !important;
+}
+
+.btn-manage:hover:not(:disabled) {
+    background-color: #404249 !important;
+}
+
+/* New Action Buttons */
+.card-actions.installed-actions {
+    margin-top: auto;
+}
+
+.action-group {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+}
+
+.btn-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    transition: all 0.2s;
+    height: 32px;
+}
+
+.btn-launch {
+    flex: 2;
+    /* Make it significantly bigger than icons */
+    background-color: var(--success-color, #23a559);
+    color: white;
+    font-size: 14px;
+    /* Slightly larger text */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-launch:hover {
+    background-color: #1e8c4b;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-icon-only {
+    width: 32px;
+    padding: 0;
+    min-width: 32px;
+    background-color: var(--bg-tertiary, #313338);
+    color: var(--text-muted, #949ba4);
+}
+
+.btn-icon-only:hover {
+    background-color: #404249;
+    color: var(--text-primary, #dbdee1);
+}
+
+.btn-icon-only svg {
+    width: 18px;
+    height: 18px;
+}

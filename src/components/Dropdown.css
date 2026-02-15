@@ -1,0 +1,97 @@
+.custom-dropdown {
+    position: relative;
+    width: 180px;
+    font-family: var(--font-sans);
+}
+
+.dropdown-trigger {
+    background: var(--bg-input);
+    color: var(--text-primary);
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    transition: background 0.2s;
+    user-select: none;
+}
+
+.dropdown-trigger:hover {
+    background: var(--bg-card-hover);
+}
+
+.dropdown-arrow {
+    transition: transform 0.2s ease;
+    color: var(--text-muted);
+}
+
+.dropdown-arrow.is-open {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    width: 100%;
+    background: var(--bg-card);
+    border-radius: 4px;
+    box-shadow: var(--shadow-elevation);
+    z-index: 100;
+    overflow: hidden;
+    padding: 4px;
+    box-sizing: border-box;
+    animation: dropdownFadeIn 0.1s ease-out;
+}
+
+@keyframes dropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-item {
+    padding: 8px 8px;
+    font-size: 14px;
+    color: var(--text-primary);
+    cursor: pointer;
+    border-radius: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.1s;
+}
+
+.dropdown-item:hover {
+    background: var(--accent-color);
+    color: var(--accent-text);
+}
+
+.dropdown-item.is-selected {
+    background: rgba(88, 101, 242, 0.1);
+    /* transparent blurple */
+    color: var(--text-primary);
+}
+
+.dropdown-item.is-selected:hover {
+    background: var(--accent-color);
+    color: var(--accent-text);
+}
+
+.check-icon {
+    width: 14px;
+    height: 14px;
+    opacity: 0.8;
+}
+
+.dropdown-item:hover .check-icon {
+    opacity: 1;
+}

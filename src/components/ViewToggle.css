@@ -1,0 +1,53 @@
+.view-toggle-container {
+    display: flex;
+    background: rgba(30, 31, 34, 0.5);
+    padding: 4px;
+    border-radius: 8px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    height: 36px;
+    width: 80px;
+    box-sizing: border-box;
+    cursor: pointer;
+    -webkit-app-region: no-drag;
+}
+
+.toggle-bg-pill {
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    width: 34px;
+    /* (80 - 8) / 2 approx, minus gaps */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 1;
+}
+
+.toggle-option {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    color: #949ba4;
+    transition: color 0.2s;
+}
+
+.toggle-option.active {
+    color: #f2f3f5;
+}
+
+.toggle-option:hover {
+    color: #dbdee1;
+}
+
+/* Position the pill */
+.view-toggle-container[data-mode="grid"] .toggle-bg-pill {
+    transform: translateX(0);
+}
+
+.view-toggle-container[data-mode="list"] .toggle-bg-pill {
+    transform: translateX(36px);
+    /* Width of option + gap */
+}

@@ -1,0 +1,128 @@
+:root {
+  /* Discord Dark Theme Palette */
+  --bg-app: #313338;
+  /* Main Chat Background */
+  --bg-sidebar: #2b2d31;
+  /* Sidebar/Channel List */
+  --bg-titlebar: #1e1f22;
+  /* Server List / Titlebar area */
+  --bg-card: #2b2d31;
+  /* Card / Message Group */
+  --bg-card-hover: #35373c;
+  /* Hover state */
+  --bg-input: #1e1f22;
+  /* Search/Input Background */
+
+  --text-primary: #dbdee1;
+  /* Normal Text */
+  --text-header: #f2f3f5;
+  /* Headers */
+  --text-muted: #949ba4;
+  /* Muted / Metadata */
+  --text-link: #00a8fc;
+  /* Links */
+
+  --accent-color: #5865F2;
+  /* Blurple */
+  --accent-hover: #4752c4;
+  --accent-text: #ffffff;
+
+  --success-color: #23a559;
+  /* Green */
+  --danger-color: #da373c;
+  /* Red */
+  --danger-hover: #a1282c;
+
+  --border-color: #1f2023;
+  /* Subtle dividers */
+  --border-subtle: #26272d;
+
+  /* Typography - gg sans equivalent */
+  --font-sans: 'Inter', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-mono: 'Consolas', 'Andale Mono', 'Ubuntu Mono', monospace;
+
+  /* Spacing */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  /* Discord uses rounder corners for some overlays, mostly 8px */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+
+  /* Micro-Animations */
+  --transition-fast: 0.15s ease-out;
+  --transition-normal: 0.25s ease;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 0 rgba(4, 4, 5, 0.2), 0 1.5px 0 rgba(6, 6, 7, 0.05), 0 2px 0 rgba(4, 4, 5, 0.05);
+  --shadow-md: 0 4px 4px rgba(0, 0, 0, 0.16);
+  --shadow-elevation: 0 8px 16px rgba(0, 0, 0, 0.24);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  font-size: 16px;
+  /* Discord base size is slightly larger/readable */
+  line-height: 1.4;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background: var(--bg-app);
+}
+
+/* Base Elements cleanup */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 600;
+  color: var(--text-header);
+}
+
+p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+button {
+  font-family: var(--font-sans);
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Scrollbar (Modern & Thin) */
+::-webkit-scrollbar {
+  width: 10px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  border: 2px solid var(--bg-app);
+  /* visual padding */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
