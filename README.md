@@ -41,7 +41,7 @@ makepkg -si
 For a quick setup without AUR helpers, you can use our installation script. It clones, builds, and sets up the desktop shortcut for you.
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourusername/pac-rat/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/dkaushik95/pac-rat/main/install.sh | bash
 ```
 
 ### Prerequisites
