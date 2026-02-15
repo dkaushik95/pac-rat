@@ -1,8 +1,16 @@
-# Pacman Manager
+# Pac-Rat
 
-Vibe coded application made with antigravity. A modern, high-performance package manager for Arch-based Linux distributions, built with Electron and React. Featuring a "Cyber-HUD" aesthetic inspired by modern gaming interfaces and Discord, it provides a seamless one-click experience for managing your system's software.
+**Pac-Rat** is a modern, high-performance package manager for Arch-based Linux distributions, built with Electron and React. It features a quirky "hungry blob" aesthetic and provides a seamless one-click experience for managing your system's software.
 
-![App Screenshot](https://via.placeholder.com/1200x800.png?text=Pacman+Manager+Preview) *Replace with actual screenshot*
+## Why Pac-Rat?
+
+As a frontend engineer and gamer, I eventually got fed up with Windows and decided to make the jump to Linux. I installed **CachyOS** and absolutely fell in love with the speed and flexibility!
+
+I wanted my non-technical friends to experience the same thing, but I knew the learning curve for installing apps could be intimidating. On Windows, they're used to just opening an `.exe` file; on Linux, the "pacman" CLI can be scary for beginners. 
+
+I built Pac-Rat to bridge that gap—a utility UI that lets anyone search, discover, install, and launch apps all from one place. It's the hungriest package hoarder on the block, making Linux app management as easy as it should be.
+
+![App Screenshot](src/assets/pacRat_preview.png)
 
 ## Features
 
@@ -16,34 +24,31 @@ Vibe coded application made with antigravity. A modern, high-performance package
 
 ## Installation
 
+### Option 1: AUR (Recommended for Arch Users)
+Since you're on Arch, the best way to install Pac-Rat is via the AUR (Arch User Repository). This ensures it's managed by `pacman` like any other system app.
+
+```bash
+# Using an AUR helper like yay
+yay -S pac-rat
+
+# Or manually
+git clone https://aur.archlinux.org/pac-rat.git
+cd pac-rat
+makepkg -si
+```
+
+### Option 2: One-Line Install Script
+For a quick setup without AUR helpers, you can use our installation script. It clones, builds, and sets up the desktop shortcut for you.
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/yourusername/pac-rat/main/install.sh | bash
+```
+
 ### Prerequisites
-
-- **Arch Linux** or an Arch-based distribution (e.g., CachyOS, EndeavourOS, Manjaro).
-- **Node.js** (v18 or higher)
+Regardless of the method, ensure you have these installed:
+- **Arch Linux** or an Arch-based distribution (CachyOS, EndeavourOS, etc).
 - **Bun** (recommended for speed)
-
-### Setup
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/pacman-manager.git
-   cd pacman-manager
-   ```
-
-2. Install dependencies:
-   ```bash
-   bun install
-   ```
-
-3. Run in development mode:
-   ```bash
-   bun run electron:dev
-   ```
-
-4. Build for production:
-   ```bash
-   bun run build
-   ```
+- **Git**
 
 ## Usage
 

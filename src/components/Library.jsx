@@ -24,7 +24,7 @@ const Library = ({ installedPackages, guiApps, onInstall, onLaunch, onUninstall,
         // Actually, let's include ALL explicitly installed packages if they don't have a .desktop file?
         // Or just stick to GUI apps for the grid. 
         // Let's use `guiApps` primarily, but maybe we can just use `installedPackages` if we want everything.
-        // Given "Pacman Manager" usually implies managing all packages, but the UI is very "App Store".
+        // Given "Pac-Rat" usually implies managing all packages, but the UI is very "App Store".
         // Let's use `guiApps` enriched.
 
         return guiApps.map(app => {

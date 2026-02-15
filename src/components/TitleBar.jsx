@@ -22,7 +22,7 @@ const TitleBar = () => {
 
     return (
         <div className="title-bar">
-            <div className="window-title">Pacman Manager</div>
+            <div className="window-title">Pac-Rat</div>
             <div className="window-controls">
                 <button className="control-btn minimize" onClick={handleMinimize} title="Minimize">
                     <svg width="10" height="1" viewBox="0 0 10 1">

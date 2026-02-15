@@ -1,5 +1,6 @@
 import React from 'react';
 import AppIcon from './AppIcon';
+import { formatPackageName } from '../utils';
 import './PackageListItem.css';
 
 const PackageListItem = ({ pkg, onInstall, onLaunch, onUninstall, onClick }) => {
@@ -17,7 +18,7 @@ const PackageListItem = ({ pkg, onInstall, onLaunch, onUninstall, onClick }) => 
             </div>
 
             <div className="list-item-content">
-                <div className="list-item-title">{pkg.name}</div>
+                <div className="list-item-title">{formatPackageName(pkg.name)}</div>
                 <div className="list-item-description">{pkg.description || 'No description available'}</div>
             </div>
 

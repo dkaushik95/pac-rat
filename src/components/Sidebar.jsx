@@ -5,9 +5,10 @@ const Sidebar = ({ activeTab, onTabChange, backendReady }) => {
     return (
         <aside className="sidebar">
             <div className="sidebar-header">
-                <h1>
-                    Pacman Manager
-                </h1>
+                <div className="sidebar-branding">
+                    <img src="/pac-rat-icon.png" alt="Pac-Rat Icon" className="sidebar-logo" />
+                    <h1>Pac-Rat</h1>
+                </div>
             </div>
 
             <nav className="nav-links">

@@ -7,5 +7,7 @@
 export const formatPackageName = (name) => {
     if (!name) return '';
     const formatted = name.replace(/-/g, ' ');
-    return formatted.charAt(0).toUpperCase() + formatted.slice(1);
+    return formatted.charAt(0).toUpperCase() + formatted.slice(1).toLowerCase();
 };
+
+export const formatDisplayName = formatPackageName;

@@ -1,7 +1,7 @@
 {
-  "name": "pacman-manager",
+  "name": "pac-rat",
   "version": "1.0.0",
-  "description": "A modern, open-source package manager for Arch Linux using Electron and React.",
+  "description": "The friendliest, hungriest package hoarder for Arch Linux. Built for gamers and switchers who want a friction-less app store experience.",
   "author": "Dishant Kaushik",
   "license": "MIT",
   "private": false,

@@ -1,16 +1,16 @@
 # Maintainer: Dishant Kaushik <your-email@example.com>
-pkgname=pacman-manager
+pkgname=pac-rat
 pkgver=1.0.0
 pkgrel=1
-pkgdesc="A modern, open-source package manager for Arch Linux using Electron and React."
+pkgdesc="The hungriest package hoarder for Arch Linux."
 arch=('any')
-url="https://github.com/yourusername/pacman-manager"
+url="https://github.com/yourusername/pac-rat"
 license=('MIT')
 depends=('electron' 'npm')
 makedepends=('bun') # Using bun as seen in project
-source=("pacman-manager::local://"
-        "pacman-manager.desktop"
-        "pacman-manager.sh")
+source=("pac-rat::local://"
+        "pac-rat.desktop"
+        "pac-rat.sh")
 sha256sums=('SKIP'
             'SKIP'
             'SKIP')
@@ -34,6 +34,6 @@ package() {
   # Install desktop entry
   install -Dm644 "../$pkgname.desktop" "$pkgdir/usr/share/applications/$pkgname.desktop"
   
-  # Install icon (assuming there's an icon, or using a placeholder)
-  # install -Dm644 "assets/icon.png" "$pkgdir/usr/share/icons/hicolor/512x512/apps/$pkgname.png"
+  # Install icon
+  install -Dm644 "public/pac-rat-icon.png" "$pkgdir/usr/share/icons/hicolor/512x512/apps/$pkgname.png"
 }

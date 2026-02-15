@@ -22,16 +22,28 @@
     cursor: default;
 }
 
+.sidebar-branding {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.sidebar-logo {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
 .sidebar-header h1 {
     font-size: 16px;
     font-weight: 700;
     color: var(--text-header);
-    display: flex;
-    align-items: center;
-    gap: 8px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin: 0;
 }
 
 .nav-links {

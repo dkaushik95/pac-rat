@@ -1,4 +1,5 @@
 import AppIcon from './AppIcon';
+import { formatPackageName } from '../utils';
 import './InstalledRow.css';
 
 const InstalledRow = ({ pkg, onUninstall }) => {
@@ -8,7 +9,7 @@ const InstalledRow = ({ pkg, onUninstall }) => {
                 <AppIcon iconPath={pkg.iconPath} url={pkg.url} alt={pkg.name} />
             </div>
             <div className="row-info">
-                <span className="row-title">{pkg.name}</span>
+                <span className="row-title">{formatPackageName(pkg.name)}</span>
                 <span className="row-meta">{pkg.version} • {pkg.description || 'No description'}</span>
             </div>
             <button className="btn-uninstall" onClick={() => onUninstall(pkg)}>
