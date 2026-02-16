@@ -35,7 +35,7 @@ if [ -d "$INSTALL_DIR" ]; then
     cd "$INSTALL_DIR"
     git pull
 else
-    git clone https://github.com/yourusername/pac-rat.git "$INSTALL_DIR"
+    git clone https://github.com/dkaushik95/pac-rat.git "$INSTALL_DIR"
     cd "$INSTALL_DIR"
 fi
 
@@ -53,7 +53,7 @@ mkdir -p "$HOME/.local/bin"
 # Create/Update the wrapper script
 cat <<EOF > "$HOME/.local/bin/pac-rat"
 #!/bin/bash
-cd "$INSTALL_DIR" && bun run electron:dev "\$@"
+cd "$INSTALL_DIR" && bun run electron . "\$@"
 EOF
 chmod +x "$HOME/.local/bin/pac-rat"
 

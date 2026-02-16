@@ -35,7 +35,7 @@ function createWindow() {
         mainWindow.loadURL(process.env.VITE_DEV_SERVER_URL);
     } else {
         // In production (or when built)
-        mainWindow.loadURL('http://localhost:5173');
+        mainWindow.loadFile(path.join(__dirname, '../dist/index.html'));
     }
 }
 
