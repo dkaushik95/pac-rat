@@ -64,6 +64,38 @@ cp pac-rat.desktop "$HOME/.local/share/applications/"
 sed -i "s|Icon=pac-rat-icon|Icon=$INSTALL_DIR/public/pac-rat-icon.png|" "$HOME/.local/share/applications/pac-rat.desktop"
 sed -i "s|Exec=pac-rat|Exec=$HOME/.local/bin/pac-rat|" "$HOME/.local/share/applications/pac-rat.desktop"
 
+# 5. PATH Check
+echo -e "${BLUE}🔍 Checking PATH for $HOME/.local/bin...${NC}"
+if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
+    echo -e "${BLUE}💡 $HOME/.local/bin is not in your PATH. Adding it...${NC}"
+    
+    # Detect shell
+    CURRENT_SHELL=$(basename "$SHELL")
+    
+    case "$CURRENT_SHELL" in
+        fish)
+            if command -v fish_add_path &> /dev/null; then
+                fish -c "fish_add_path $HOME/.local/bin"
+                echo -e "${GREEN}✅ Added to fish path using fish_add_path.${NC}"
+            else
+                echo "set -U fish_user_paths $HOME/.local/bin $fish_user_paths" >> "$HOME/.config/fish/config.fish"
+            fi
+            ;;
+        bash)
+            echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$HOME/.bashrc"
+            echo -e "${GREEN}✅ Added to .bashrc.${NC}"
+            ;;
+        zsh)
+            echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$HOME/.zshrc"
+            echo -e "${GREEN}✅ Added to .zshrc.${NC}"
+            ;;
+        *)
+            echo -e "${RED}⚠️  Could not automatically add to PATH for $CURRENT_SHELL.${NC}"
+            echo -e "Please manually add 'export PATH=\"\$HOME/.local/bin:\$PATH\"' to your shell config."
+            ;;
+    esac
+    echo -e "${BLUE}🔄 Please restart your terminal or run: source ~/.${CURRENT_SHELL}rc (or equivalent)${NC}"
+fi
+
 echo -e "${GREEN}✅ Pac-Rat successfully installed!${NC}"
 echo -e "${BLUE}🚀 You can now launch it by typing 'pac-rat' in your terminal or finding it in your application menu.${NC}"
-echo -e "${BLUE}💡 Note: Make sure $HOME/.local/bin is in your PATH.${NC}"

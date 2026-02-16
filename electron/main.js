@@ -28,7 +28,7 @@ function createWindow() {
     });
 
     // Open DevTools for debugging
-    mainWindow.webContents.openDevTools({ mode: 'detach' });
+    // mainWindow.webContents.openDevTools({ mode: 'detach' });
 
     // Load the index.html from the dist folder in production or the dev server in development.
     if (process.env.VITE_DEV_SERVER_URL) {

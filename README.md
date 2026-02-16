@@ -50,6 +50,14 @@ Regardless of the method, ensure you have these installed:
 - **Bun** (recommended for speed)
 - **Git**
 
+### Uninstallation
+To cleanly remove Pac-Rat and its system integration:
+```bash
+bash install.sh --uninstall # Coming soon
+# For now, use the dedicated script:
+curl -fsSL https://raw.githubusercontent.com/dkaushik95/pac-rat/main/uninstall.sh | bash
+```
+
 ## Usage
 
 - **Search**: Use the search bar on the Home tab to find packages in the official repositories.
